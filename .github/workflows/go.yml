@@ -21,7 +21,7 @@ jobs:
     - name: Install gf
       run: wget https://github.com/gogf/gf/releases/download/v2.0.6/gf_linux_amd64 -O gf && chmod +x gf &&  ./gf install
     - name: Build
-      run: gf build main.go -n my-app -a amd64,386 -s linux -p .
+      run: gf build main.go -n main -a amd64,386 -s linux -p .
 
     - name: Set up QEMU
       uses: docker/setup-qemu-action@v1
@@ -36,7 +36,7 @@ jobs:
     - name: Build and push
       uses: docker/build-push-action@v2
       with:
-        context: manifest/docker
+        context: .
         push: true
         platforms: linux/amd64,linux/arm64
         tags: registry.cn-hangzhou.aliyuncs.com/daveroey/faas-go:v1.0
