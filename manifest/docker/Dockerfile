@@ -8,7 +8,7 @@ ENV WORKDIR  /app
 
 ADD /resource $WORKDIR/
 
-ADD ./main $WORKDIR/main
+ADD /main $WORKDIR/main
 
 RUN chmod +x $WORKDIR/main
 
