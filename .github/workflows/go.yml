@@ -19,7 +19,7 @@ jobs:
         go-version: 1.18
 
     - name: Install gf
-      run: go install github.com/gogf/gf/cmd/gf/v2
+      run: wget https://github.com/gogf/gf/releases/download/v2.0.6/gf_linux_amd64 -O gf && chmod +x gf &&  ./gf install
     - name: Build
       run: gf build main.go -n my-app -a amd64,386 -s linux -p .
 
