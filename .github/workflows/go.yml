@@ -18,10 +18,8 @@ jobs:
       with:
         go-version: 1.18
 
-    - name: Install gf
-      run: wget https://github.com/gogf/gf/releases/download/v2.0.6/gf_linux_amd64 -O gf && chmod +x gf &&  ./gf install
     - name: Build
-      run: gf build main.go -n main -a arm64 -s linux -p .
+      run: CGO_ENABLED=0 GOOS=linux GOARCH=arm64 go build -v main.go
 
     - name: Set up QEMU
       uses: docker/setup-qemu-action@v1
