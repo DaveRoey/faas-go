@@ -6,9 +6,9 @@ FROM alpine:latest
 
 ENV WORKDIR  /app
 
-ADD resource $WORKDIR/
+ADD resource $WORKDIR/resource
 
-ADD manifest $WORKDIR/
+ADD manifest $WORKDIR/manifest
 
 ADD main $WORKDIR/main
 
