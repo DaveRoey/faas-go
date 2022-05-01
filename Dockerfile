@@ -8,6 +8,8 @@ ENV WORKDIR  /app
 
 ADD resource $WORKDIR/
 
+ADD manifest $WORKDIR/
+
 ADD main $WORKDIR/main
 
 RUN chmod +x $WORKDIR/main
